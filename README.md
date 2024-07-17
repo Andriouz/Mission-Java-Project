@@ -119,7 +119,8 @@ Define the stages of the continuous deployment pipeline in a Jenkinsfile. The st
 
 ## Jenkins Groovy Pipeline Script
 
- pipeline {
+
+pipeline {
     agent any
     
     tools {
