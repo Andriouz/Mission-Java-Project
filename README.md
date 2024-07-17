@@ -2,25 +2,26 @@
 
 **Java-based Full-Stack Web Application.** Users can view or create missions for each agents. They can also edit/ delete missions.
 
-## Technologies
+## 2. Overview of Technologies and Features
 
-- Java
-- Spring Boot
-- JDBC
-- H2 Database
-- Thymeleaf
-- HTML5
-- Maven
+Java: The primary programming language used for application development.
+Spring Boot: A framework that simplifies the development of Java applications.
+JDBC: Java Database Connectivity for database interaction.
+H2 Database: An in-memory database used for development and testing.
+Thymeleaf: A server-side Java template engine for rendering HTML.
+HTML5: The standard markup language for creating web pages.
+Maven: A build automation tool used for project management.
+
 
 ## Features
 
-- CRUD operations
-- JDBC for database control
-- Spring Boot framework
-- Mapping HTTP requests to appropriate HTML pages on the controller
-- Sharing model attributes between the controller and HTML files using Thymeleaf
-- Customizing schema using schema.sql file
-- Inserting initial data using data.sql file
+CRUD Operations: Create, Read, Update, and Delete operations for managing data.
+JDBC for Database Control: Direct interaction with the H2 database.
+Spring Boot Framework: Provides infrastructure support for developing web applications.
+Mapping HTTP Requests: Mapping of HTTP requests to appropriate HTML pages using controllers.
+Sharing Model Attributes: Using Thymeleaf to share model attributes between the controller and HTML files.
+Customizing Schema: Using schema.sql file to customize the database schema.
+Inserting Initial Data: Using data.sql file to insert initial data into the database
 
 ## How to Run
 
