@@ -72,6 +72,9 @@ Phase 1: Infrastructure Setup
 - Create AWS VMs for Jenkins, Nexus, SonarQube
 Provision of three virtual machines on AWS to host Jenkins, Nexus, and SonarQube. Each VM will have appropriate specifications to handle the expected load.
 
+![Screenshot 2024-07-17 121609](https://github.com/user-attachments/assets/8dccf1d1-d5bf-4176-a20b-1ae8fa268535)
+
+
 - Setup AWS EKS with New User
 Create a new user with the necessary permissions to manage the EKS cluster. Set up the EKS cluster to deploy and manage Kubernetes applications.
 
