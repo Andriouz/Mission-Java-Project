@@ -218,6 +218,11 @@ pipeline {
 
 ![jenkins 2](https://github.com/user-attachments/assets/29313d7a-2d65-467b-8b53-3f2e74b2e5d0)
 
+**Pushed to Docker Hub**
+
+![docker1](https://github.com/user-attachments/assets/8fb071b0-8282-41be-8192-2c3c5ba42106)
+
+
 ## Conclusion
   
 The CI/CD pipeline for the web application is designed to automate the processes of building, testing, and deploying the application.
