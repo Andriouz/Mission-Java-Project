@@ -1,4 +1,4 @@
-# CI/CD Pipeline Design of a Demo Spy App
+# CI/CD Pipeline of a Demo Spy App
 
 **Java-based Full-Stack Web Application.** Users can view or create missions for each agents. They can also edit/ delete missions.
 
