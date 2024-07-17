@@ -81,11 +81,22 @@ Create a new user with the necessary permissions to manage the EKS cluster. Set 
 - Install Jenkins
 Install Jenkins on the designated VM. Configure Jenkins with the required plugins and integrate it with the version control system (e.g., Git).
 
+![Screenshot 2024-07-17 121826](https://github.com/user-attachments/assets/8ae05524-5513-4877-a2e3-e2dca5722540)
+
+
 - Install & Setup SonarQube Using Docker Containers
 Install SonarQube on the designated VM—Configure SonarQube to integrate with Jenkins for static code analysis. Define quality gates and metrics to ensure code quality.
 
-- Install & Setup Nexus Using Docker Containers
+![Screenshot 2024-07-17 121826](https://github.com/user-attachments/assets/deb2b87c-9a48-4102-acce-6019c52fceb0)
+
+![sonarqube](https://github.com/user-attachments/assets/489708a7-f7f4-4a1a-a935-b73baaf1f061)
+
+
+- Install & Setup SonatypeNexus3 Using Docker Containers
 Install Nexus on the designated VM—Configure Nexus to manage Maven artifacts. Integrate Nexus with Jenkins to automate artifact storage and retrieval.
+
+![sonatype](https://github.com/user-attachments/assets/b8fe01e5-aebc-4b79-b5e8-e415126c2fbd)
+
 
 Phase 2: Source Code Setup
 
