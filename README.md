@@ -102,7 +102,7 @@ Define the stages of the continuous deployment pipeline in a Jenkinsfile. The st
 
 - Production Deployment: Deploy the application to the production environment upon successful testing
 
-  ##5. Conclusion
+## Conclusion
   
 The CI/CD pipeline for the web application is designed to automate the processes of building, testing, and deploying the application.
 By leveraging tools such as Jenkins, SonarQube, Nexus, Grafana, and Prometheus, the pipeline ensures continuous integration and continuous delivery while maintaining high code quality and system reliability.
