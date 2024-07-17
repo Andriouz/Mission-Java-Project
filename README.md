@@ -4,13 +4,19 @@
 
 ## 2. Overview of Technologies and Features
 
-Java: The primary programming language used for application development.
-Spring Boot: A framework that simplifies the development of Java applications.
-JDBC: Java Database Connectivity for database interaction.
-H2 Database: An in-memory database used for development and testing.
-Thymeleaf: A server-side Java template engine for rendering HTML.
-HTML5: The standard markup language for creating web pages.
-Maven: A build automation tool used for project management.
+- Java: The primary programming language used for application development.
+  
+- Spring Boot: A framework that simplifies the development of Java applications.
+
+- JDBC: Java Database Connectivity for database interaction.
+
+- H2 Database: An in-memory database used for development and testing.
+
+- Thymeleaf: A server-side Java template engine for rendering HTML.
+
+- HTML5: The standard markup language for creating web pages.
+
+- Maven: A build automation tool used for project management.
 
 
 ## Features
