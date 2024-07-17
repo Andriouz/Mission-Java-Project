@@ -59,8 +59,6 @@ Jenkins Plugins Installation & Tool Configuration: Install necessary Jenkins plu
 
 Phase 3: Declarative CI Pipeline
 
-- RBAC Setup in EKS Cluster: Set up Role-Based Access Control (RBAC) in the EKS cluster.
-
 - CD Stages in Pipeline: Define continuous deployment stages in the pipeline.
 
 - Mail Notifications Configuration: Configure email notifications for pipeline events.
@@ -102,7 +100,10 @@ Phase 2: Source Code Setup
 
 - Jenkins Plugins Installation & Tool Configuration
 
-- Install necessary Jenkins plugins such as Git, Maven, Kubernetes, and email extension. Configure tools and global settings in Jenkins to prepare for the CI/CD pipeline.
+- Install necessary Jenkins plugins such as Git, Maven, Kubernetes, and email extension. Configure tools and global settings in Jenkins to prepare for the CI/CD pipelin2
+
+![jenkins](https://github.com/user-attachments/assets/a00a7e83-b237-4e69-82d1-93b6f25ce938)
+
 
 Phase 3: Declarative CI Pipeline
 
@@ -115,6 +116,106 @@ Define the stages of the continuous deployment pipeline in a Jenkinsfile. The st
 - Deploy: Deploy the application to a staging environment for further testing.
 
 - Production Deployment: Deploy the application to the production environment upon successful testing
+
+## Jenkins Groovy Pipeline Script
+
+ pipeline {
+    agent any
+    
+    tools {
+        jdk 'Jdk17'
+        maven 'Maven3'
+    }
+    environment{
+        SCANNER_HOME= tool "sonar-scanner"
+    }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        
+        stage('Git Checkout') {
+            steps {
+                git branch: 'main', changelog: false, credentialsId: 'git-cred', poll: false, url: 'https://github.com/Andriouz/Mission-Java-Project.git'
+            }
+        }
+        
+        stage('Compile') {
+            steps {
+                sh "mvn compile"
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                sh "mvn test -DskipTests=true"
+            }
+        }
+        
+         stage('Trivy Scan File System') {
+            steps {
+                sh "trivy fs --format table -o tirvy-fs-report.html ."
+                 
+            }
+        }
+        
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('Sonar') {
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=Mission -Dsonar.projectName=Mission \
+                            -Dsonar.java.binaries=. '''
+                }
+                 
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                sh "mvn package -DskipTests=true"
+                 
+            }
+        }
+        
+        stage('Deploy Artifacts to Nexus') {
+            steps {
+                withMaven(globalMavenSettingsConfig: 'maven-settings', jdk: 'Jdk17', maven: 'Maven3', mavenSettingsConfig: '', traceability: true) {
+                    sh "mvn deploy -DskipTests=true"
+                }
+                 
+            }
+        }
+        
+        stage('Build & Tag Docker Image') {
+            steps {
+                script{
+                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                        sh "docker build -t anderu224/mission:latest ."
+                    }
+                }
+                 
+            }
+        }
+        
+         stage('Publish Docker Image') {
+            steps {
+                script{
+                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                        sh "docker push anderu224/mission:latest "
+                    }
+                }
+                 
+            }
+        }
+        
+    }
+}
+
+![jenkins1](https://github.com/user-attachments/assets/2ecdf667-7f49-4671-b6c6-5c429843f8d1)
+
+![jenkins 2](https://github.com/user-attachments/assets/29313d7a-2d65-467b-8b53-3f2e74b2e5d0)
 
 ## Conclusion
   
