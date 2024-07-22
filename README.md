@@ -1,3 +1,6 @@
+
+![pipeline](https://github.com/user-attachments/assets/e6d15d0b-6b66-48c4-95c3-334569fad495)
+
 # CI/CD Pipeline of a Demo Spy App
 
 **Java-based Full-Stack Web Application.** Users can view or create missions for each agents. They can also edit/ delete missions.
@@ -43,7 +46,7 @@
 
 ## CI/CD Pipeline Design
 
-Phase 1: Infrastructure Setup
+**Phase 1: Infrastructure Setup**
 
 - Create AWS VMs: Provision virtual machines on AWS for Jenkins, Nexus, and SonarQube.
 
@@ -71,11 +74,11 @@ Phase 1: Infrastructure Setup
    
  * Vulnerability scanning of Docker images using Trivy
 
-Phase 2: Source Code Setup
+**Phase 2: Source Code Setup**
 
 Jenkins Plugins Installation & Tool Configuration: Install necessary Jenkins plugins and configure tools required for the CI/CD pipeline.
 
-Phase 3: Declarative CI Pipeline
+**Phase 3: Declarative CI Pipeline**
 
 - CD Stages in Pipeline: Define continuous deployment stages in the pipeline.
 
