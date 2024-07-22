@@ -50,8 +50,26 @@ Phase 1: Infrastructure Setup
 - Install Jenkins: Install Jenkins for continuous integration and continuous deployment.
 
 - Install & Setup SonarQube: Install and configure SonarQube for code quality analysis.
-
+  
 - Install & Setup Nexus: Install and configure Nexus for artifact repository management.
+
+ * Compilation
+   
+ * Testing
+   
+ * File system scan/Dependency check scan
+   
+ * SonarQube analysis
+   
+ * Quality gate check
+   
+ * Building/packaging application
+   
+ * Publishing application artifacts to Nexus
+   
+ * Building & tagging Docker images
+   
+ * Vulnerability scanning of Docker images using Trivy
 
 Phase 2: Source Code Setup
 
